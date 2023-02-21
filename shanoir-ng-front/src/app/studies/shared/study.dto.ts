@@ -136,6 +136,8 @@ export class StudyDTOService {
         //entity.timepoints = dto.timepoints;
         entity.visibleByDefault = dto.visibleByDefault;
         entity.withExamination = dto.withExamination;
+        entity.studyDOI = dto.studyDOI;
+        entity.generatedStudyDOI = dto.generatedStudyDOI;
         if (dto.studyCards) {
             entity.studyCardList = dto.studyCards.map(studyCardDTO => StudyCardDTOServiceAbstract.mapSyncFields(studyCardDTO, new StudyCard()));
         } else {
@@ -255,6 +257,8 @@ export class StudyDTO {
     //timepoints: Timepoint[];
     visibleByDefault: boolean;
     withExamination: boolean;
+    studyDOI: string;
+    generatedStudyDOI: string;
     tags: Tag[];
     studyTags: Tag[];
     studyCards: StudyCardDTO[];
@@ -292,6 +296,8 @@ export class StudyDTO {
         }) : null;
         this.visibleByDefault = study.visibleByDefault;
         this.withExamination = study.withExamination;
+        this.studyDOI = study.studyDOI;
+        this.generatedStudyDOI = study.generatedStudyDOI;
         this.tags = study.tags;
         this.studyTags = study.studyTags;
         this.description = study.description;
@@ -335,6 +341,7 @@ export class PublicStudyDataDTO {
   startDate: Date;
   studyStatus: string;
   studyType: StudyType;
+  studyDOI: string;
   description: string;
   studyTags: Tag[];
 }

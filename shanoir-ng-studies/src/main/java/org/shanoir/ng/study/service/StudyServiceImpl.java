@@ -249,6 +249,8 @@ public class StudyServiceImpl implements StudyService {
 		studyDb.setStudyStatus(study.getStudyStatus());
 		studyDb.setVisibleByDefault(study.isVisibleByDefault());
 		studyDb.setWithExamination(study.isWithExamination());
+		studyDb.setStudyDOI(study.getStudyDOI());
+		studyDb.setGeneratedStudyDOI(study.getGeneratedStudyDOI());
 		studyDb.setMonoCenter(study.isMonoCenter());
 
 		if (study.getStudyCenterList() != null) {

@@ -39,3 +39,5 @@ toggle-switch { margin: 0 7px; }
 .tabs li.active { cursor: default; border-bottom-color: transparent; color: var(--color-a); z-index: 0; }
 .tabs li.active::after { z-index: -1; content: ""; display: block; position: absolute; top: -1px; bottom: -1px; left: -1px; right: -1px; border: 1px solid var(--grey); border-bottom-color: transparent; }
 textarea { resize : both; }
+.description { inline-size: 500px; }
+.generatedDOI { margin-left: 83px; margin-top: 12px; }

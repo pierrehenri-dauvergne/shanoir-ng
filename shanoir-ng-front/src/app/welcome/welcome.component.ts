@@ -16,6 +16,7 @@ export class WelcomeComponent implements OnInit {
 
   public githubLogoUrl: string = ImagesUrlUtil.GITHUB_WHITE_LOGO_PATH;
   public shanoirLogoUrl: string = ImagesUrlUtil.SHANOIR_WHITE_LOGO_PATH;
+  public doiLogoUrl: string = ImagesUrlUtil.DOI_LOGO_PATH;
   public email: string = "mailto:developers_shanoir-request@inria.fr";
   public studies: PublicStudyDataDTO[] = [];
   public StudyType = StudyType;

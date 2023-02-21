@@ -200,6 +200,8 @@ export class StudyComponent extends EntityComponent<Study> {
             'studyStatus': [this.study.studyStatus, [Validators.required]],
             'profile': [this.study.profile, [Validators.required]],
             'withExamination': [this.study.withExamination],
+            'studyDOI': [this.study.studyDOI],
+            'generatedStudyDOI': [this.study.generatedStudyDOI],
             'clinical': [this.study.clinical],
             'description': [this.study.description],
             'visibleByDefault': [this.study.visibleByDefault],
@@ -569,5 +571,11 @@ export class StudyComponent extends EntityComponent<Study> {
 
     goToAccessRequest(accessRequest : AccessRequest) {
         this.router.navigate(["/access-request/details/" + accessRequest.id]);
+    }
+
+    generateDOI() {
+      console.log("generate DOI");
+      this.study.generatedStudyDOI = "Generated.doi.shanoir";
+      this.studyService.update(this.study.id, this.study);
     }
 }

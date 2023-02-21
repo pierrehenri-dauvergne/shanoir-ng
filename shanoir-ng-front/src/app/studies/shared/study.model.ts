@@ -46,6 +46,8 @@ export class Study extends Entity {
     timepoints: Timepoint[];
     visibleByDefault: boolean;
     withExamination: boolean;
+    studyDOI: string;
+    generatedStudyDOI: string;
     studyCardList: StudyCard[];
     tags: Tag[];
     studyTags: Tag[];

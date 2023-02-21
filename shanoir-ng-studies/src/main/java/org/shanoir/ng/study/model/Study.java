@@ -147,6 +147,10 @@ public class Study extends HalEntity {
 	/** Is with examination. */
 	private boolean withExamination;
 
+	private String studyDOI;
+
+	private String generatedStudyDOI;
+
 	private boolean challenge;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "study", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -474,6 +478,22 @@ public class Study extends HalEntity {
 	 */
 	public void setWithExamination(boolean withExamination) {
 		this.withExamination = withExamination;
+	}
+
+	public String getStudyDOI() {
+		return studyDOI;
+	}
+
+	public void setStudyDOI(String studyDOI) {
+		this.studyDOI = studyDOI;
+	}
+
+	public String getGeneratedStudyDOI() {
+		return generatedStudyDOI;
+	}
+
+	public void setGeneratedStudyDOI(String generatedStudyDOI) {
+		this.generatedStudyDOI = generatedStudyDOI;
 	}
 
 	/**

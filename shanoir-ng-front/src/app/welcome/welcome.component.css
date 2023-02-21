@@ -66,7 +66,7 @@ hr {
 
 .studyDescription {
   font-size: 25px;
-  padding-right: 20px;
+  padding-right: 50px;
   color: black;
 }
 
@@ -76,6 +76,18 @@ hr {
 
 .studyValues {
   font-size: 16px;
+}
+
+.studyDOI {
+  position: absolute;
+  right: 80px;
+}
+
+.studyDOIicon {
+  color: black;
+  width: 20px;
+  height: auto;
+  font-size: 24px;
 }
 
 .accessRequest {

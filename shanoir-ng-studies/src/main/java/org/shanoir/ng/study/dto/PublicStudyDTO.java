@@ -61,6 +61,8 @@ public class PublicStudyDTO {
 
 	private List<StudyTagDTO> studyTags;
 
+	private String studyDOI;
+
 	/**
 	 * Default constructor.
 	 */
@@ -216,5 +218,13 @@ public class PublicStudyDTO {
 
 	public void setStudyTags(List<StudyTagDTO> studyTags) {
 		this.studyTags = studyTags;
+	}
+
+	public String getStudyDOI() {
+		return studyDOI;
+	}
+
+	public void setStudyDOI(String studyDOI) {
+		this.studyDOI = studyDOI;
 	}
 }

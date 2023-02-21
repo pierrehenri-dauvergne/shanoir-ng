@@ -1,6 +1,10 @@
 <div class="welcome-component">
   <div class="header">
-    <img class="github-logo" title="Shanoir on GitHub" [src]="githubLogoUrl" (click)="toGithub()"/>
+    <div>
+      <a href="https://github.com/fli-iam/shanoir-ng">
+        <img class="github-logo" [src]="githubLogoUrl"/>
+      </a>
+    </div>
     <div class="buttons">
       <button class="buttonItem" type="button" (click)="login()">Access Shanoir</button>
       <button class="buttonItem" type="button" (click)="toShanoir()">More info</button>
@@ -22,6 +26,11 @@
   </div>
   <div *ngIf="studies.length > 0" class="studyTab">
     <div class="studyItem" *ngFor="let study of studies | slice:0:show">
+      <div *ngIf="study.studyDOI" class="studyDOI">
+        <a href="http://doi.org/{{ study.studyDOI }}">
+          <i class="studyDOIicon fa-regular fa-file"></i>
+        </a>
+      </div>
       <span class="studyTitle"><b>{{study.name}}</b></span>
       <span *ngIf="study.description" class="studyDescription"> | {{ study.description }}</span>
       <br/>

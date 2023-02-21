@@ -131,6 +131,9 @@ public abstract class StudyDecorator implements StudyMapper {
 		if (study.getStudyTags() != null) {
 			publicStudyDTO.setStudyTags(studyTagMapper.studyTagListToStudyTagDTOList(study.getStudyTags()));
 		}
+		if (study.getStudyDOI() != null) {
+			publicStudyDTO.setStudyDOI(study.getStudyDOI());
+		}
 		return publicStudyDTO;
 	}
 }

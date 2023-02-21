@@ -66,7 +66,9 @@ along with this program. If not, see https://www.gnu.org/licenses/gpl-3.0.html
             <label i18n="Study detail|Name label@@studyDetailPublicDescription">Public description</label>
             <span class="right-col" [ngSwitch]="mode">
               <ng-template [ngSwitchCase]="'view'">
-                {{study.description}}
+                <div class="description">
+                  {{study.description}}
+                </div>
               </ng-template>
               <ng-template ngSwitchDefault>
                 <textarea type="text" formControlName="description" [(ngModel)]="study.description"></textarea>
@@ -136,21 +138,21 @@ along with this program. If not, see https://www.gnu.org/licenses/gpl-3.0.html
 							</ng-template>
 						</span>
 					</li>
-                    <li *ngIf="keycloakService.isUserAdmin()">
-                        <label i18n="Study detail|Challenge label@@studyDetailChalenge">Challenge</label>
-                        <span class="right-col" [ngSwitch]="mode">
-                            <ng-template [ngSwitchCase]="'view'">
-                                <span *ngIf="study.challenge" class="bool-true"><i class="fas fa-check"></i></span>
-                                <span *ngIf="!study.challenge" class="bool-false"><i class="fas fa-times"></i></span>
-                            </ng-template>
-                            <ng-template ngSwitchDefault>
-                                <checkbox [(ngModel)]="study.challenge" formControlName="challenge"></checkbox>
-                            </ng-template>
-                        </span>
-                    </li>
-					<li>
-						<label i18n="Study detail|With examination label@@studyDetailWithExamination">Is with examination</label>
-						<span class="right-col" [ngSwitch]="mode">
+          <li *ngIf="keycloakService.isUserAdmin()">
+              <label i18n="Study detail|Challenge label@@studyDetailChalenge">Challenge</label>
+              <span class="right-col" [ngSwitch]="mode">
+                  <ng-template [ngSwitchCase]="'view'">
+                      <span *ngIf="study.challenge" class="bool-true"><i class="fas fa-check"></i></span>
+                      <span *ngIf="!study.challenge" class="bool-false"><i class="fas fa-times"></i></span>
+                  </ng-template>
+                  <ng-template ngSwitchDefault>
+                      <checkbox [(ngModel)]="study.challenge" formControlName="challenge"></checkbox>
+                  </ng-template>
+              </span>
+          </li>
+          <li>
+            <label i18n="Study detail|With examination label@@studyDetailWithExamination">Is with examination</label>
+            <span class="right-col" [ngSwitch]="mode">
 							<ng-template [ngSwitchCase]="'view'">
 								<span *ngIf="study.withExamination" class="bool-true"><i class="fas fa-check"></i></span>
 								<span *ngIf="!study.withExamination" class="bool-false"><i class="fas fa-times"></i></span>
@@ -159,9 +161,31 @@ along with this program. If not, see https://www.gnu.org/licenses/gpl-3.0.html
 								<checkbox [(ngModel)]="study.withExamination" formControlName="withExamination"></checkbox>
 							</ng-template>
 						</span>
-					</li>
+          </li>
 				</ol>
 			</fieldset>
+      <fieldset [class.hidden]="activeTab != 'general'">
+        <legend i18n="Study detail|Name label@@studyDetailDataObjectIdentifier">Data Object Identifier</legend>
+        <ol>
+          <li>
+            <label i18n="Study detail|DOI label@@studyDetailStudyDOI">Related external DOI</label>
+            <span class="right-col" [ngSwitch]="mode">
+              <ng-template [ngSwitchCase]="'view'">
+                {{study.studyDOI}}
+              </ng-template>
+              <ng-template ngSwitchDefault>
+                <input type="text" formControlName="studyDOI" [(ngModel)]="study.studyDOI" />
+              </ng-template>
+						</span>
+          </li>
+          <li>
+            <button [disabled]="mode != 'view'" i18n="Study detail|DOI label@@studyDetailGeneratedStudyDOI" class="Button" type="button" style="height: 25px;" (click)="generateDOI()">Generate DOI for this study</button>
+            <span class="right-col generatedDOI">
+              {{study.generatedStudyDOI}}
+						</span>
+          </li>
+        </ol>
+      </fieldset>
 			<fieldset [class.hidden]="activeTab != 'files'">
 				<legend i18n="Study detail|Data User Agreement label@@studyDetailDataUserAgreement">
 					Data User Agreement (DUA)

@@ -83,6 +83,10 @@ public class StudyDTO {
 	private boolean visibleByDefault;
 
 	private boolean withExamination;
+
+	private String studyDOI;
+
+	private String generatedStudyDOI;
 	
 	private List<StudyUser> studyUserList;
 
@@ -395,6 +399,22 @@ public class StudyDTO {
 	 */
 	public void setWithExamination(boolean withExamination) {
 		this.withExamination = withExamination;
+	}
+
+	public String getStudyDOI() {
+		return studyDOI;
+	}
+
+	public void setStudyDOI(String studyDOI) {
+		this.studyDOI = studyDOI;
+	}
+
+	public String getGeneratedStudyDOI() {
+		return generatedStudyDOI;
+	}
+
+	public void setGeneratedStudyDOI(String generatedStudyDOI) {
+		this.generatedStudyDOI = generatedStudyDOI;
 	}
 
 	/**
