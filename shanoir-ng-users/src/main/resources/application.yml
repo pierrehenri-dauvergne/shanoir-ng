@@ -98,6 +98,9 @@ kc.admin.client:
 logging:
   file:
     name: /var/log/shanoir-ng-logs/shanoir-ng-users.log
+  logback:
+    rollingpolicy:
+      max-history: 14
   level:
     org.springframework.web: ERROR
     org.hibernate: ERROR

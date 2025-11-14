@@ -78,6 +78,9 @@ logging:
     file: '%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level [%mdc{username}] %logger{35} - %msg%n'
   file:
     name: /var/log/shanoir-ng-logs/shanoir-ng-nifti-conversion.log
+  logback:
+    rollingpolicy:
+      max-history: 14
   level:
     org.springframework.web: ERROR
     org.shanoir: INFO
